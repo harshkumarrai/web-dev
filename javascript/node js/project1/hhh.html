@@ -1,0 +1,19 @@
+<html></html>
+
+</html>
+<head>
+
+</head>
+<body>
+    linkedin
+    <div id="posts"></div>
+    <script>
+        async function fetching() {
+            console.log("before fetching")
+            const response= await axios.get("https://jsonplaceholder.typicode.com/todos/1");
+            console.log(response.data);
+            document.getElementById("posts").innerHTML=response.data.title;
+        }
+        fetching();
+    </script>
+</body>
