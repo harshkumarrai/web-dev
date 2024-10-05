@@ -1,55 +1,37 @@
 <html>
-    <head>
-        Auth website
-    </head>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <body>
+<head>
+    AUTH WEBSITE
+</head>
+<body>
+    <div>
         <div>
-            Signup
-            <input type="text" id="signup-username" name="username" placeholder="username">
-            <input type="text" id="signup-password" name="password" placeholder="password" id="password">
-            <button onclick="signup()">sumbit</button>
-        </div>
+        Signup
         <div>
-            signin
-            <input type="text" id="signin-username" name="username" placeholder="username">
-            <input type="text" id="signin-password" name="password" placeholder="password" id="password">
-            <button onclick="signin()">sumbit</button>
-        </div>
+        <input type="text" name="username" placeholder="username">
+        <input type="text" name="password" placeholder="password">
+        <button onclick="signup()">Sumbit</button>
+    </div>
+    <div>
         <div>
-            User Information
-            <div id="Information"></div>
-        </div>
+        Signin
         <div>
-            <button onclick="logout()">Logout</button>
-        </div>
-        <script>
-         async function signup(){
-            const username=document.getElementById("signup-username").value;
-            const password=document.getElementById("signup-password").value;
-            await axios.post("http://localhost:3000/signup",{
-                username:username,
-                password:password
-            });
-            alert("you are signedup")
-
-            }
-
-            async function signin() {
-                
-                const username=document.getElementById("signin-username").value;
-                const password=document.getElementById("signin-password").value;
-                
-                const response=await axios.post("http://localhost:3000/signin",{
-                    username:username,
-                    password:password
-                });
-                localStorage.setItem("token",response.data.token);
-               alert("you are signed in");
-            }
-            function logout(){
-                localStorage.removeItem("token");
-            }
-        </script>
-    </body>
+        <input type="text" name="username" placeholder="username">
+        <input type="text" name="password" placeholder="password">
+        <button onclick="signin()">Sumbit</button>
+    </div>
+    <div>
+        User Information
+    </div>
+    <br></br>
+    <div>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>"></script>
+    <script>
+        function signup(){
+              
+        }
+    </script>
+</body>
 </html>
+

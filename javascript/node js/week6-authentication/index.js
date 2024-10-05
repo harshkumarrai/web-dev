@@ -1,7 +1,9 @@
 const express= require('express');
 const app =express();
  app.use(express.json());
-const users=[];
+ const jwt=require('jsonwebtoken');
+ const JWT_SECRET="randomharksijhdiloveu"
+;const users=[];
 function generateToken(){
     return Math.random();
 }
