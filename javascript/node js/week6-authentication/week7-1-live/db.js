@@ -1,22 +1,19 @@
 const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
-const ObjectId=mongoose.ObjectId;
-const user=new Schema({
-    email:String,
-    password:String,
-    name:String
+const ObjectId=Schema.ObjectId;
+const User=new Schema({
+    name:String,
+    email:{type:String, unique:true},
+    password:String
 })
-
 const Todo=new Schema({
+    user_id:ObjectId,
     title:String,
-    done:Boolean,
-    userId:ObjectId
-}) 
-
+    done :Boolean
+})
 const UserModel=mongoose.model('users',User);
-const Todomodel=mongoose.model('todos',Todo);
-
+const TodoModel=mongoose.model('todos',Todo);
 module.exports={
-    UserModel:UserModel,
-    Todomodel:Todomodel
+    UserModel,
+    TodoModel
 }
