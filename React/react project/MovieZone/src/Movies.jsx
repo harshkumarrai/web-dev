@@ -15,7 +15,7 @@ const Movies = () => {
         <div className="mx-auto text-center">
           <button
             onClick={() =>setMovieList(movies)}
-            type="button"
+            type="button" 
             className="btn btn-outline-primary mx-3"
           >
             All
