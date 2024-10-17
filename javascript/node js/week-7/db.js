@@ -12,6 +12,7 @@ const Todo=new Schema({
     done :Boolean,
     userId:ObjectId
 })
+
 const UserModel=mongoose.model('users',user);
 const TodoModel=mongoose.model('todos',Todo);
 
