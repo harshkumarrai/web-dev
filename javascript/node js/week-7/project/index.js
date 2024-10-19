@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const { userRouter } = require("./routes/user");
 const { courseRouter } = require("./routes/course");
 const { adminRouter } = require("./routes/admin");
+const { UserModel } = require('./db');
 const app = express();
 app.use(express.json());
 
@@ -19,5 +20,5 @@ async function main() {
     app.listen(3000);
     console.log("listening on port 3000")
 }
-
+UserModel.fin
 main()
