@@ -1,46 +1,70 @@
+//spa 
 import { useState } from "react";
 import { useEffect } from "react";
+import{BrowserRouter,Routes,Route,Link,useNavigate, redirect, Outlet} from "react-router-dom";
 function App(){
     return(
-      <div>
-        hi there 2
-        </div>
+      //creae allen site
+      <>
+      <div>     
+       
+        <BrowserRouter>
+       
+        <Routes>
+          <Route path ='/' element={<Layout/>}>
+        <Route path="/neet/online--coaching-class-11" element={<Class11Program/>}/>
+        <Route path="/neet/online--coaching-class-12" element={<Class12Program/>}/>
+        <Route path="/" element={<Landing/>}/>
+        <Route path="*" element={<ErrorPage/>}/>
+        </Route>
+        </Routes>
+      </BrowserRouter>
+      </div>
+      </>
     )
 }
-const style={width :200 , backgroundColor:"white",borderRadius :10,borderColor:"grey"};
-function postcomponent(){
-  return <div style={style}>
-    <img src={""} alt="" />
+function  Layout(){
+  return(
+    <div style={{height:"100vh"}}>
+      {/* header */}
+          <Link to="/">Allen</Link>
+      <div></div>
+    <Link to="/neet/online--coaching-class-11">Class11Program</Link>
+    <div></div>
+    <Link to="/neet/online--coaching-class-12">Class12Program</Link>
+      <div style={{height: "90vh"}}>
+      <Outlet/>
+      </div>
+      
+    {/* <footer></footer> */}
+    </div>
+  )
+}
+function ErrorPage(){
+  return <div>
+    sorry page not found
+  </div>
+}
+function  Class11Program(){
+  const navigate=useNavigate();
+  function redirectUser() {
+    navigate('/')
+  }
+  return <div>
+    neet program for class 11th
+    <div></div>
+
+    <button onClick={redirectUser}>Go back to landing page</button>
+  </div>
+}
+function Landing(){
+  return <div>
+    welcome to allen
+  </div>
+}
+function  Class12Program(){
+  return <div>
+    neet program for class 12th
   </div>
 }
 export default App;
-//   return <div>
-  
-//     <Counter/>
-//   </div>
-// }
-// function Counter(){
-//   const [count, setCount] = useState(0);
-//   function increasecount(){
-//     setCount(count + 1);
-//   }
-
-//   function decreasecount(){
-//     setCount(count - 1);
-  
-//   }
-//   useEffect(() => {
-//     setInterval(function(){
-//       setCount(function(x){
-//         return x +1;
-//       })
-//   },1000);
-//   }, [])
-  
-
-//   return <div>
-//     <h1 id="text">Count: {count}</h1>
-//     <button onClick={increasecount}>increasecount</button>
-//     <button onClick={decreasecount}>decreasecount</button>
-//   </div>
-//}
