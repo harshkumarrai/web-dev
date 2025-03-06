@@ -15,5 +15,5 @@ function sum(n) {
 	return ans;
 }
 
-const ans = sum(100);
-console.log(ans);
+const anss = sum(100);
+console.log(anss) ;
